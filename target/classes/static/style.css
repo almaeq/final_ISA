@@ -1,0 +1,227 @@
+:root {
+    --bg-color: #f4f5f7;
+    --column-bg: #ebecf0;
+    --card-bg: #ffffff;
+    --text-color: #172b4d;
+    --primary-color: #0052cc;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #42526e;
+}
+
+.kanban-board {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.column {
+    flex: 1;
+    background: var(--column-bg);
+    border-radius: 6px;
+    padding: 10px;
+    min-height: 400px;
+    /* target for dropping */
+}
+
+.column h2 {
+    font-size: 16px;
+    margin: 0 0 10px 10px;
+    text-transform: uppercase;
+    color: #5e6c84;
+}
+
+.task-list {
+    min-height: 300px;
+}
+
+/* Task Card */
+.task-card {
+    background: var(--card-bg);
+    /* Changed from --surface-card to --card-bg */
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    cursor: grab;
+    transition: transform 0.2s, box-shadow 0.2s;
+    user-select: none;
+    position: relative;
+    border: 1px solid #dfe1e6;
+    /* Changed from var(--border) to a specific color */
+}
+
+.task-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+.task-card:active {
+    cursor: grabbing;
+}
+
+.task-card h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-color);
+    /* Changed from --text-primary to --text-color */
+    font-size: 1rem;
+}
+
+.task-card p {
+    margin: 0;
+    color: #5e6c84;
+    /* Changed from var(--text-secondary) to a specific color */
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    gap: 5px;
+}
+
+.card-actions button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #5e6c84;
+    /* Changed from var(--text-secondary) to a specific color */
+    transition: color 0.2s;
+}
+
+.card-actions button:hover {
+    color: var(--primary-color);
+    /* Changed from var(--primary) to var(--primary-color) */
+}
+
+.card-actions .delete-btn:hover {
+    color: #ef4444;
+}
+
+/* Edit Form Styles */
+.task-edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.edit-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #dfe1e6;
+    /* Changed from var(--border) to a specific color */
+    border-radius: 4px;
+    background: #f4f5f7;
+    /* Changed from var(--surface-ground) to var(--bg-color) */
+    color: var(--text-color);
+    /* Changed from var(--text-primary) to var(--text-color) */
+}
+
+.edit-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.save-btn {
+    background: var(--primary-color);
+    /* Changed from var(--primary) to var(--primary-color) */
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+.cancel-btn {
+    background: transparent;
+    color: #5e6c84;
+    /* Changed from var(--text-secondary) to a specific color */
+    padding: 4px 8px;
+    border: 1px solid #dfe1e6;
+    /* Changed from var(--border) to a specific color */
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.add-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.add-btn:hover {
+    background-color: #0047b3;
+}
+
+dialog {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 300px;
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input,
+textarea {
+    padding: 8px;
+    border: 1px solid #dfe1e6;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.modal-actions button {
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-actions button[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+}

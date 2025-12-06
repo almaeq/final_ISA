@@ -1,0 +1,6 @@
+/home/alma/0inng-soft2/final_ISA/src/main/java/com/example/kanban/KanbanApplication.java
+/home/alma/0inng-soft2/final_ISA/src/main/java/com/example/kanban/controller/KanbanController.java
+/home/alma/0inng-soft2/final_ISA/src/main/java/com/example/kanban/model/Task.java
+/home/alma/0inng-soft2/final_ISA/src/main/java/com/example/kanban/model/TaskStatus.java
+/home/alma/0inng-soft2/final_ISA/src/main/java/com/example/kanban/repository/TaskRepository.java
+/home/alma/0inng-soft2/final_ISA/src/main/java/com/example/kanban/service/TaskService.java

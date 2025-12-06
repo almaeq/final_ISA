@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+    <div th:fragment="card(t)" class="task-card" th:data-task-id="${t.id}" th:id="'task-' + ${t.id}">
+        <h4 th:text="${t.title}">Task Title</h4>
+        <p th:text="${t.description}">Description</p>
+        <div class="card-actions">
+            <button th:hx-get="@{/editTask/{id}(id=${t.id})}" th:hx-target="'#task-' + ${t.id}" hx-swap="outerHTML"
+                class="edit-btn">✎</button>
+            <button th:hx-delete="@{/deleteTask/{id}(id=${t.id})}" th:hx-target="'#task-' + ${t.id}" hx-swap="outerHTML"
+                class="delete-btn">×</button>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Kanban Board</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.2/Sortable.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Kanban Todo List</h1>
+            <button onclick="document.getElementById('task-modal').showModal()" class="add-btn">+ New Task</button>
+        </header>
+
+        <div class="kanban-board">
+            <div class="column" id="todo-column" data-status="TODO">
+                <h2>To Do <span></span></h2>
+                <div class="task-list" id="TODO">
+                    <th:block th:each="task : ${tasksByStatus['TODO']}">
+                        <div th:replace="~{fragments/task-card :: card(${task})}"></div>
+                    </th:block>
+                </div>
+            </div>
+
+            <div class="column" id="doing-column" data-status="DOING">
+                <h2>Doing <span></span></h2>
+                <div class="task-list" id="DOING">
+                    <th:block th:each="task : ${tasksByStatus['DOING']}">
+                        <div th:replace="~{fragments/task-card :: card(${task})}"></div>
+                    </th:block>
+                </div>
+            </div>
+
+            <div class="column" id="done-column" data-status="DONE">
+                <h2>Done <span></span></h2>
+                <div class="task-list" id="DONE">
+                    <th:block th:each="task : ${tasksByStatus['DONE']}">
+                        <div th:replace="~{fragments/task-card :: card(${task})}"></div>
+                    </th:block>
+                </div>
+            </div>
+        </div>
+
+        <dialog id="task-modal">
+            <form method="post" action="/addTask">
+                <h3>Add New Task</h3>
+                <input type="text" name="title" placeholder="Title" required>
+                <textarea name="description" placeholder="Description"></textarea>
+                <div class="modal-actions">
+                    <button type="button" onclick="document.getElementById('task-modal').close()">Cancel</button>
+                    <button type="submit">Add Task</button>
+                </div>
+            </form>
+        </dialog>
+    </div>
+
+    <script>
+        const columns = document.querySelectorAll('.task-list');
+        columns.forEach(column => {
+            new Sortable(column, {
+                group: 'kanban',
+                animation: 150,
+                onEnd: function (evt) {
+                    const itemEl = evt.item;
+                    const newStatus = evt.to.id;
+                    const taskId = itemEl.getAttribute('data-task-id');
+
+                    // Call backend to update status
+                    fetch(`/api/tasks/${taskId}/status?status=${newStatus}`, {
+                        method: 'PUT'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
