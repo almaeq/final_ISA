@@ -1,0 +1,22 @@
+{
+  "name": "final_isa",
+  "version": "1.0.0",
+  "description": "Una aplicación web de gestión de tareas estilo Kanban, simple y eficiente.   Permite organizar tareas en columnas de estado (Por hacer, En progreso, Hecho) con funcionalidad de arrastrar y soltar (Drag & Drop), todo gestionado con Java en el backend y renderizado con Thymeleaf y HTMX.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/almaeq/final_ISA.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/almaeq/final_ISA/issues"
+  },
+  "homepage": "https://github.com/almaeq/final_ISA#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^24.10.1"
+  }
+}
