@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  # Tu aplicación Kanban
+  kanban-app:
+    build: .
+    ports:
+      - "23456:23456"
+    depends_on:
+      - logstash
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+
+  # Base de datos de logs
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.10
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+      - "9200:9200"
+    volumes:
+      # ESTA LINEA ES LA CLAVE PARA QUE NO SE BORRE NADA
+      - es_data:/usr/share/elasticsearch/data
+
+  # Procesador de logs
+  logstash:
+    image: docker.elastic.co/logstash/logstash:7.17.10
+    container_name: logstash
+    restart: always
+    command: logstash -f /etc/logstash/conf.d/logstash.conf
+    volumes:
+      - ./logstash-config/logstash.conf:/etc/logstash/conf.d/logstash.conf
+    ports:
+      - "5000:5000"
+    depends_on:
+      - elasticsearch
+
+  # Visualizador
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.17.10
+    container_name: kibana
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch
+
+# ESTO CREA EL ALMACÉN PERSISTENTE
+volumes:
+  es_data:
