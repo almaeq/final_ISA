@@ -11,6 +11,6 @@ bootstrapApplication(AppComponent, {
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     provideIonicAngular(),
     provideRouter(routes, withPreloading(PreloadAllModules)),
-    provideHttpClient(), // <--- ESTO ES LO QUE TE FALTA
+    provideHttpClient(), // <--- ESTO ES LO QUE ARREGLA LA PANTALLA NEGRA
   ],
 });
