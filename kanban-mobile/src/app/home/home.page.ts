@@ -50,4 +50,20 @@ export class HomePage implements OnInit {
     this.http.put(`${this.apiUrl}/tasks/${task.id}/status?status=${nextStatus}`, {})
       .subscribe(() => this.loadTasks());
   }
+
+  generateDemoTasks() {
+  const demoTasks = [
+    { title: 'Estudiar PWA', description: 'Entender Service Workers', status: 'TODO' },
+    { title: 'Aprobar Arquitectura', description: 'Entregar el TP final', status: 'DOING' },
+    { title: 'Instalar Docker', description: 'Configurar contenedores', status: 'DONE' }
+  ];
+
+  demoTasks.forEach(task => {
+    // Usamos this.http directamente como ya lo tienes configurado
+    this.http.post(`${this.apiUrl}/tasks`, task).subscribe({
+      next: () => console.log(`Tarea "${task.title}" creada`),
+      complete: () => this.loadTasks()
+    });
+  });
+}
 }
