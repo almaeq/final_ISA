@@ -1,14 +1,48 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common'; // <--- Necesario para *ngFor
-import { IonicModule } from '@ionic/angular'; // <--- Necesario para todos los componentes ion-*
+import { CommonModule } from '@angular/common';
+
+import {
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+  IonRefresher,
+  IonRefresherContent,
+  IonText,
+  IonList,
+  IonCard,
+  IonCardHeader,
+  IonCardTitle,
+  IonCardSubtitle,
+  IonCardContent,
+  IonBadge,
+} from '@ionic/angular/standalone';
+
 import { Task, TaskService } from '../services/task';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  standalone: true, // Indica que es un componente moderno
-  imports: [IonicModule, CommonModule] // <--- ¡AQUÍ ESTÁ LA SOLUCIÓN!
+  standalone: true,
+  imports: [
+    CommonModule,
+
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonRefresher,
+    IonRefresherContent,
+    IonText,
+    IonList,
+    IonCard,
+    IonCardHeader,
+    IonCardTitle,
+    IonCardSubtitle,
+    IonCardContent,
+    IonBadge,
+  ],
 })
 export class HomePage implements OnInit {
   tasks: Task[] = [];
@@ -29,7 +63,7 @@ export class HomePage implements OnInit {
       error: (err) => {
         console.log('Error o modo offline', err);
         if (event) event.target.complete();
-      }
+      },
     });
   }
 }
