@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      Kanban PWA
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <ion-refresher slot="fixed" (ionRefresh)="loadTasks($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <!-- 👇 SOLO ESTO va dentro del contenedor -->
+  <div class="kanban-container">
+
+    <ion-text color="medium">
+      <p style="text-align: center; font-size: 0.9em;">
+        <i>Desliza hacia abajo para intentar reconectar.</i>
+      </p>
+    </ion-text>
+
+    <ion-list>
+      <ion-card *ngFor="let task of tasks">
+        <ion-card-header>
+          <ion-card-subtitle>
+            <ion-badge
+              [color]="task.status === 'DONE'
+                ? 'success'
+                : (task.status === 'DOING' ? 'warning' : 'medium')">
+              {{ task.status }}
+            </ion-badge>
+          </ion-card-subtitle>
+          <ion-card-title>{{ task.title }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          {{ task.description }}
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+
+  </div>
+  <!-- 👆 FIN contenedor -->
+
+</ion-content>

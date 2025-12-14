@@ -1,0 +1,27 @@
+ion-content {
+  --background: #f4f5f7; /* Un gris muy suave estilo Trello/Jira */
+}
+
+ion-card {
+  --background: #ffffff;
+  margin: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra suave */
+}
+
+ion-card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #172b4d; /* Azul oscuro profesional */
+}
+
+ion-card-subtitle {
+  margin-bottom: 8px;
+}
+
+/* Para centrar el mensaje de "Desliza para conectar" */
+p {
+  text-align: center;
+  margin-top: 20px;
+  color: #6b778c;
+}

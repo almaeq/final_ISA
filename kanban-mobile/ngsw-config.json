@@ -1,0 +1,44 @@
+{
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "resources": {
+        "files": [
+          "/favicon.ico",
+          "/index.html",
+          "/*.css",
+          "/*.js"
+        ]
+      }
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/assets/**",
+          "/*.(png|jpg|jpeg|svg|webp|gif)"
+        ]
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "kanban-api",
+      "urls": [
+        "http://localhost:23456/api/mobile/tasks",
+        "http://127.0.0.1:23456/api/mobile/tasks",
+        "/api/mobile/tasks"
+      ],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "maxSize": 50,
+        "maxAge": "1d",
+        "timeout": "5s"
+      }
+    }
+  ]
+}
