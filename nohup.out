@@ -1,0 +1,295 @@
+2025-12-15 08:43:27,408 [    837]   WARN - #c.i.o.v.n.p.FSRecords - Records storage [/home/alma/.cache/JetBrains/IntelliJIdea2025.2/caches/records.dat] was in use by process [OwnershipInfo{owner pid: 362368, acquired at: 1765660358395}] which is not exist now (wasn't closed properly/crashed?) -> re-acquiring forcibly
+2025-12-15 08:43:27,434 [    863]   WARN - #c.i.o.v.n.p.PersistentFSLoader - [VFS load problem]: VFS wasn't safely shut down: records.wasClosedProperly is false
+2025-12-15 08:43:29,888 [   3317]   WARN - #c.i.o.v.n.p.PersistentFSLoader - [VFS load problem]: NOT_CLOSED_PROPERLY recovered, no problems remain
+2025-12-15 08:43:32,559 [   5988] SEVERE - #c.i.u.i.UnindexedFilesScanner - It should not happen that project has seen file id in orphan queue at index larger than number of files that orphan queue ever had. projectQueue.lastSeenIdsInOrphanQueue=79, orphanQueue.untrimmedSize=0, orphanQueue.fileIds.size=0, project=Project(name=backend, containerState=COMPONENT_CREATED, componentStore=/home/alma/0prog2/programacion-2-2025-trabajo-final-almaeq/backend), orphanQueueDiscardReason=com.intellij.util.indexing.OrphanDirtyFilesQueueDiscardReason@34ad94d6
+java.lang.Throwable: It should not happen that project has seen file id in orphan queue at index larger than number of files that orphan queue ever had. projectQueue.lastSeenIdsInOrphanQueue=79, orphanQueue.untrimmedSize=0, orphanQueue.fileIds.size=0, project=Project(name=backend, containerState=COMPONENT_CREATED, componentStore=/home/alma/0prog2/programacion-2-2025-trabajo-final-almaeq/backend), orphanQueueDiscardReason=com.intellij.util.indexing.OrphanDirtyFilesQueueDiscardReason@34ad94d6
+	at com.intellij.openapi.diagnostic.Logger.error(Logger.java:375)
+	at com.intellij.util.indexing.UnindexedFilesScannerStartupKt.getNotSeenIds(unindexedFilesScannerStartup.kt:207)
+	at com.intellij.util.indexing.UnindexedFilesScannerStartupKt.scanAndIndexProjectAfterOpen(unindexedFilesScannerStartup.kt:72)
+	at com.intellij.util.indexing.ProjectFileBasedIndexStartupActivity.runActivity(ProjectFileBasedIndexStartupActivity.kt:93)
+	at com.intellij.openapi.project.InitialDumbTaskRequiredForSmartMode.performInDumbMode(InitialDumbTaskRequiredForSmartMode.kt:22)
+	at com.intellij.openapi.project.DumbModeTask.perform(DumbModeTask.java:40)
+	at com.intellij.openapi.project.MergingTaskQueue$QueuedTask.executeTask(MergingTaskQueue.java:296)
+	at com.intellij.openapi.project.MergingTaskQueue$QueuedTask.executeTask(MergingTaskQueue.java:284)
+	at com.intellij.openapi.project.MergingQueueGuiExecutor.runSingleTask$lambda$8(MergingQueueGuiExecutor.kt:255)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcess$1(CoreProgressManager.java:229)
+	at com.intellij.platform.diagnostic.telemetry.helpers.TraceKt.use(trace.kt:44)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcess$2(CoreProgressManager.java:228)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$executeProcessUnderProgress$14(CoreProgressManager.java:681)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.registerIndicatorAndRun(CoreProgressManager.java:756)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.computeUnderProgress(CoreProgressManager.java:712)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:680)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:78)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.runProcess(CoreProgressManager.java:209)
+	at com.intellij.openapi.project.MergingQueueGuiExecutor.runSingleTask(MergingQueueGuiExecutor.kt:251)
+	at com.intellij.openapi.project.MergingQueueGuiExecutor.processTasksWithProgress$lambda$3(MergingQueueGuiExecutor.kt:126)
+	at com.intellij.openapi.project.MergingQueueGuiSuspender.setCurrentSuspenderAndSuspendIfRequested(MergingQueueGuiSuspender.kt:61)
+	at com.intellij.openapi.project.MergingQueueGuiExecutor.processTasksWithProgress(MergingQueueGuiExecutor.kt:110)
+	at com.intellij.openapi.project.DumbServiceGuiExecutor.processTasksWithProgress(DumbServiceGuiExecutor.kt:41)
+	at com.intellij.openapi.project.MergingQueueGuiExecutor.runBackgroundProcessWithSuspender(MergingQueueGuiExecutor.kt:242)
+	at com.intellij.openapi.project.MergingQueueGuiExecutor.lambda$1$lambda$0(MergingQueueGuiExecutor.kt:102)
+	at com.intellij.openapi.project.MergingQueueGuiExecutor.runWithCallbacks(MergingQueueGuiExecutor.kt:226)
+	at com.intellij.openapi.project.MergingQueueGuiExecutor._init_$lambda$1(MergingQueueGuiExecutor.kt:101)
+	at com.intellij.openapi.project.SingleTaskExecutor$StateAwareTask.run$lambda$0(SingleTaskExecutor.kt:37)
+	at com.intellij.openapi.project.SingleTaskExecutor.runWithStateHandling(SingleTaskExecutor.kt:63)
+	at com.intellij.openapi.project.SingleTaskExecutor.access$runWithStateHandling(SingleTaskExecutor.kt:22)
+	at com.intellij.openapi.project.SingleTaskExecutor$StateAwareTask.run(SingleTaskExecutor.kt:37)
+	at com.intellij.openapi.project.MergingQueueGuiExecutor.startBackgroundProcess$lambda$6$lambda$5(MergingQueueGuiExecutor.kt:156)
+	at com.intellij.openapi.project.MergingQueueGuiExecutor$startInBackgroundWithVisibleOrInvisibleProgress$backgroundableTask$1.run(MergingQueueGuiExecutor.kt:197)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.startTask(CoreProgressManager.java:498)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.startTask(ProgressManagerImpl.java:119)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcessWithProgressAsynchronously$7(CoreProgressManager.java:549)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$submit$4(ProgressRunner.java:252)
+	at com.intellij.openapi.progress.ProgressManager.lambda$runProcess$0(ProgressManager.java:98)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcess$1(CoreProgressManager.java:229)
+	at com.intellij.platform.diagnostic.telemetry.helpers.TraceKt.use(trace.kt:44)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcess$2(CoreProgressManager.java:228)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$executeProcessUnderProgress$14(CoreProgressManager.java:681)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.registerIndicatorAndRun(CoreProgressManager.java:756)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.computeUnderProgress(CoreProgressManager.java:712)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:680)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:78)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.runProcess(CoreProgressManager.java:209)
+	at com.intellij.openapi.progress.ProgressManager.runProcess(ProgressManager.java:98)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$submit$5(ProgressRunner.java:252)
+	at com.intellij.openapi.progress.impl.ProgressRunner$ProgressRunnable.run(ProgressRunner.java:515)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$launchTask$18(ProgressRunner.java:480)
+	at com.intellij.util.concurrency.ChildContext$runInChildContext$1.invoke(propagation.kt:167)
+	at com.intellij.util.concurrency.ChildContext$runInChildContext$1.invoke(propagation.kt:167)
+	at com.intellij.util.concurrency.ChildContext.runInChildContext(propagation.kt:173)
+	at com.intellij.util.concurrency.ChildContext.runInChildContext(propagation.kt:167)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$launchTask$19(ProgressRunner.java:476)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1$1.run(Executors.java:735)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1$1.run(Executors.java:732)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1.run(Executors.java:732)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-12-15 08:43:32,568 [   5997] SEVERE - #c.i.u.i.UnindexedFilesScanner - IntelliJ IDEA 2025.2.3  Build #IU-252.26830.84
+2025-12-15 08:43:32,568 [   5997] SEVERE - #c.i.u.i.UnindexedFilesScanner - JDK: 21.0.8; VM: OpenJDK 64-Bit Server VM; Vendor: JetBrains s.r.o.
+2025-12-15 08:43:32,568 [   5997] SEVERE - #c.i.u.i.UnindexedFilesScanner - OS: Linux
+2025-12-15 08:43:32,568 [   5997] SEVERE - #c.i.u.i.UnindexedFilesScanner - Last Action: 
+JCEF_V(43:35:702): Found cef_server binary '/opt/idea-IU-252.26830.84/jbr/lib/cef_server' via System.getProperty('java.home')=/opt/idea-IU-252.26830.84/jbr
+JCEF_V(43:35:702): Java is started via native launcher. Found cef_server path /opt/idea-IU-252.26830.84/jbr/lib/cef_server (via system propety)
+2025-12-15 08:43:35,911 [   9340]   WARN - #c.i.o.f.i.EditorCompositeModelManager - Cannot use saved provider list (savedProviders={split-provider[text-editor;markdown-preview-editor]=[Element: <state/>]}, resolvedProvider=[])
+2025-12-15 08:43:36,442 [   9871] SEVERE - #c.i.u.i.UnindexedFilesScanner - It should not happen that project has seen file id in orphan queue at index larger than number of files that orphan queue ever had. projectQueue.lastSeenIdsInOrphanQueue=79, orphanQueue.untrimmedSize=0, orphanQueue.fileIds.size=0, project=Project(name=proxy, containerState=COMPONENT_CREATED, componentStore=/home/alma/0prog2/programacion-2-2025-trabajo-final-almaeq/proxy), orphanQueueDiscardReason=com.intellij.util.indexing.OrphanDirtyFilesQueueDiscardReason@34ad94d6
+java.lang.Throwable: It should not happen that project has seen file id in orphan queue at index larger than number of files that orphan queue ever had. projectQueue.lastSeenIdsInOrphanQueue=79, orphanQueue.untrimmedSize=0, orphanQueue.fileIds.size=0, project=Project(name=proxy, containerState=COMPONENT_CREATED, componentStore=/home/alma/0prog2/programacion-2-2025-trabajo-final-almaeq/proxy), orphanQueueDiscardReason=com.intellij.util.indexing.OrphanDirtyFilesQueueDiscardReason@34ad94d6
+	at com.intellij.openapi.diagnostic.Logger.error(Logger.java:375)
+	at com.intellij.util.indexing.UnindexedFilesScannerStartupKt.getNotSeenIds(unindexedFilesScannerStartup.kt:207)
+	at com.intellij.util.indexing.UnindexedFilesScannerStartupKt.scanAndIndexProjectAfterOpen(unindexedFilesScannerStartup.kt:72)
+	at com.intellij.util.indexing.ProjectFileBasedIndexStartupActivity.runActivity(ProjectFileBasedIndexStartupActivity.kt:93)
+	at com.intellij.openapi.project.InitialDumbTaskRequiredForSmartMode.performInDumbMode(InitialDumbTaskRequiredForSmartMode.kt:22)
+	at com.intellij.openapi.project.DumbModeTask.perform(DumbModeTask.java:40)
+	at com.intellij.openapi.project.MergingTaskQueue$QueuedTask.executeTask(MergingTaskQueue.java:296)
+	at com.intellij.openapi.project.MergingTaskQueue$QueuedTask.executeTask(MergingTaskQueue.java:284)
+	at com.intellij.openapi.project.MergingQueueGuiExecutor.runSingleTask$lambda$8(MergingQueueGuiExecutor.kt:255)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcess$1(CoreProgressManager.java:229)
+	at com.intellij.platform.diagnostic.telemetry.helpers.TraceKt.use(trace.kt:44)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcess$2(CoreProgressManager.java:228)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$executeProcessUnderProgress$14(CoreProgressManager.java:681)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.registerIndicatorAndRun(CoreProgressManager.java:756)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.computeUnderProgress(CoreProgressManager.java:712)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:680)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:78)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.runProcess(CoreProgressManager.java:209)
+	at com.intellij.openapi.project.MergingQueueGuiExecutor.runSingleTask(MergingQueueGuiExecutor.kt:251)
+	at com.intellij.openapi.project.MergingQueueGuiExecutor.processTasksWithProgress$lambda$3(MergingQueueGuiExecutor.kt:126)
+	at com.intellij.openapi.project.MergingQueueGuiSuspender.setCurrentSuspenderAndSuspendIfRequested(MergingQueueGuiSuspender.kt:61)
+	at com.intellij.openapi.project.MergingQueueGuiExecutor.processTasksWithProgress(MergingQueueGuiExecutor.kt:110)
+	at com.intellij.openapi.project.DumbServiceGuiExecutor.processTasksWithProgress(DumbServiceGuiExecutor.kt:41)
+	at com.intellij.openapi.project.MergingQueueGuiExecutor.runBackgroundProcessWithSuspender(MergingQueueGuiExecutor.kt:242)
+	at com.intellij.openapi.project.MergingQueueGuiExecutor.lambda$1$lambda$0(MergingQueueGuiExecutor.kt:102)
+	at com.intellij.openapi.project.MergingQueueGuiExecutor.runWithCallbacks(MergingQueueGuiExecutor.kt:226)
+	at com.intellij.openapi.project.MergingQueueGuiExecutor._init_$lambda$1(MergingQueueGuiExecutor.kt:101)
+	at com.intellij.openapi.project.SingleTaskExecutor$StateAwareTask.run$lambda$0(SingleTaskExecutor.kt:37)
+	at com.intellij.openapi.project.SingleTaskExecutor.runWithStateHandling(SingleTaskExecutor.kt:63)
+	at com.intellij.openapi.project.SingleTaskExecutor.access$runWithStateHandling(SingleTaskExecutor.kt:22)
+	at com.intellij.openapi.project.SingleTaskExecutor$StateAwareTask.run(SingleTaskExecutor.kt:37)
+	at com.intellij.openapi.project.MergingQueueGuiExecutor.startBackgroundProcess$lambda$6$lambda$5(MergingQueueGuiExecutor.kt:156)
+	at com.intellij.openapi.project.MergingQueueGuiExecutor$startInBackgroundWithVisibleOrInvisibleProgress$backgroundableTask$1.run(MergingQueueGuiExecutor.kt:197)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.startTask(CoreProgressManager.java:498)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.startTask(ProgressManagerImpl.java:119)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcessWithProgressAsynchronously$7(CoreProgressManager.java:549)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$submit$4(ProgressRunner.java:252)
+	at com.intellij.openapi.progress.ProgressManager.lambda$runProcess$0(ProgressManager.java:98)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcess$1(CoreProgressManager.java:229)
+	at com.intellij.platform.diagnostic.telemetry.helpers.TraceKt.use(trace.kt:44)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcess$2(CoreProgressManager.java:228)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$executeProcessUnderProgress$14(CoreProgressManager.java:681)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.registerIndicatorAndRun(CoreProgressManager.java:756)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.computeUnderProgress(CoreProgressManager.java:712)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:680)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:78)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.runProcess(CoreProgressManager.java:209)
+	at com.intellij.openapi.progress.ProgressManager.runProcess(ProgressManager.java:98)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$submit$5(ProgressRunner.java:252)
+	at com.intellij.openapi.progress.impl.ProgressRunner$ProgressRunnable.run(ProgressRunner.java:515)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$launchTask$18(ProgressRunner.java:480)
+	at com.intellij.util.concurrency.ChildContext$runInChildContext$1.invoke(propagation.kt:167)
+	at com.intellij.util.concurrency.ChildContext$runInChildContext$1.invoke(propagation.kt:167)
+	at com.intellij.util.concurrency.ChildContext.runInChildContext(propagation.kt:173)
+	at com.intellij.util.concurrency.ChildContext.runInChildContext(propagation.kt:167)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$launchTask$19(ProgressRunner.java:476)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1$1.run(Executors.java:735)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1$1.run(Executors.java:732)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1.run(Executors.java:732)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-12-15 08:43:36,451 [   9880] SEVERE - #c.i.u.i.UnindexedFilesScanner - IntelliJ IDEA 2025.2.3  Build #IU-252.26830.84
+2025-12-15 08:43:36,451 [   9880] SEVERE - #c.i.u.i.UnindexedFilesScanner - JDK: 21.0.8; VM: OpenJDK 64-Bit Server VM; Vendor: JetBrains s.r.o.
+2025-12-15 08:43:36,451 [   9880] SEVERE - #c.i.u.i.UnindexedFilesScanner - OS: Linux
+2025-12-15 08:43:36,451 [   9880] SEVERE - #c.i.u.i.UnindexedFilesScanner - Last Action: 
+2025-12-15 08:43:36,721 [  10150]   WARN - #c.i.s.c.i.StationSocketConnectionLoop - RecentProjects connection failed with NoSuchFileException (/run/user/1000/jb.station.sock)
+2025-12-15 08:43:39,567 [  12996]   WARN - #c.i.s.c.i.StationSocketConnectionLoop - Discovery connection failed with NoSuchFileException (/run/user/1000/jb.station.sock)
+2025-12-15 08:43:39,580 [  13009]   WARN - #c.i.v.l.u.StorageId$Directory - Failed to move /home/alma/.cache/JetBrains/IntelliJIdea2025.2/vcs-log/backend_56b8e3ab_289ba3ea/index to /home/alma/.cache/JetBrains/IntelliJIdea2025.2/vcs-log/backend_56b8e3ab_289ba3ea/index
+java.nio.file.NoSuchFileException: /home/alma/.cache/JetBrains/IntelliJIdea2025.2/vcs-log/backend_56b8e3ab_289ba3ea/index
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:94)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:108)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:114)
+	at java.base/sun.nio.fs.UnixFileSystem.move(UnixFileSystem.java:892)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.move(UnixFileSystemProvider.java:309)
+	at com.intellij.platform.core.nio.fs.DelegatingFileSystemProvider.move(DelegatingFileSystemProvider.java:211)
+	at java.base/java.nio.file.Files.move(Files.java:1431)
+	at com.intellij.vcs.log.util.StorageId.cleanupAllStorageFiles(PersistentUtil.kt:58)
+	at com.intellij.vcs.log.data.VcsLogStorageImpl.lambda$createStorageAndIndexBackend$4(VcsLogStorageImpl.java:375)
+	at com.intellij.util.io.IOUtil.openCleanOrResetBroken(IOUtil.java:310)
+	at com.intellij.vcs.log.data.VcsLogStorageImpl.createStorageAndIndexBackend(VcsLogStorageImpl.java:358)
+	at com.intellij.vcs.log.data.VcsLogData.createStorageAndIndex(VcsLogData.java:149)
+	at com.intellij.vcs.log.data.VcsLogData.<init>(VcsLogData.java:92)
+	at com.intellij.vcs.log.impl.VcsLogManager.<init>(VcsLogManager.kt:62)
+	at com.intellij.vcs.log.impl.IdeVcsLogManager.<init>(IdeVcsLogManager.kt:33)
+	at com.intellij.vcs.log.impl.IdeVcsProjectLog.createLogManager(IdeVcsProjectLog.kt:48)
+	at com.intellij.vcs.log.impl.VcsProjectLogBase.getOrCreateLogManager(VcsProjectLogBase.kt:221)
+	at com.intellij.vcs.log.impl.VcsProjectLogBase.access$getOrCreateLogManager(VcsProjectLogBase.kt:52)
+	at com.intellij.vcs.log.impl.VcsProjectLogBase$getOrCreateLogManager$2.invokeSuspend(VcsProjectLogBase.kt:209)
+	at com.intellij.vcs.log.impl.VcsProjectLogBase$getOrCreateLogManager$2.invoke(VcsProjectLogBase.kt)
+	at com.intellij.vcs.log.impl.VcsProjectLogBase$getOrCreateLogManager$2.invoke(VcsProjectLogBase.kt)
+	at com.intellij.platform.backend.observation.PlatformActivityTrackerService$trackConfigurationActivity$2$1.invokeSuspend(PlatformActivityTrackerService.kt:72)
+	at com.intellij.platform.backend.observation.PlatformActivityTrackerService$trackConfigurationActivity$2$1.invoke(PlatformActivityTrackerService.kt)
+	at com.intellij.platform.backend.observation.PlatformActivityTrackerService$trackConfigurationActivity$2$1.invoke(PlatformActivityTrackerService.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:44)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:166)
+	at kotlinx.coroutines.BuildersKt.withContext(Unknown Source)
+	at com.intellij.platform.backend.observation.PlatformActivityTrackerService.trackConfigurationActivity(PlatformActivityTrackerService.kt:71)
+	at com.intellij.platform.backend.observation.TrackingUtil.trackActivity(util.kt:23)
+	at com.intellij.vcs.log.impl.VcsProjectLogBase.getOrCreateLogManager(VcsProjectLogBase.kt:208)
+	at com.intellij.vcs.log.impl.VcsProjectLogBase.reinitUnsafe(VcsProjectLogBase.kt:188)
+	at com.intellij.vcs.log.impl.VcsProjectLogBase.access$reinitUnsafe(VcsProjectLogBase.kt:52)
+	at com.intellij.vcs.log.impl.VcsProjectLogBase$reinitAsync$1.invokeSuspend(VcsProjectLogBase.kt:182)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:613)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:1189)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:778)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:765)
+JCEF_I(43:40:228): Found free tcp-port 6188 for server.
+JCEF_I(43:40:229): Found free tcp-port 6189 for java-handlers.
+JCEF_V(43:40:265): Created CefServer instance. Transport port=6188 (backward port=6189). Params:
+[--disable-features=SpareRendererForSitePerProcess, --force-device-scale-factor=1.0, --disable-gpu-process-crash-limit, --disable-component-update, --autoplay-policy=no-user-gesture-required]| log_file=/home/alma/.cache/JetBrains/IntelliJIdea2025.2/log/jcef_20873.log, log_severity=LOGSEVERITY_DISABLE
+2025-12-15 08:43:42,870 [  16299]   WARN - #c.i.v.l.u.StorageId$Directory - Failed to move /home/alma/.cache/JetBrains/IntelliJIdea2025.2/vcs-log/proxy_743d0145_289ba3ea/index to /home/alma/.cache/JetBrains/IntelliJIdea2025.2/vcs-log/proxy_743d0145_289ba3ea/index
+java.nio.file.NoSuchFileException: /home/alma/.cache/JetBrains/IntelliJIdea2025.2/vcs-log/proxy_743d0145_289ba3ea/index
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:94)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:108)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:114)
+	at java.base/sun.nio.fs.UnixFileSystem.move(UnixFileSystem.java:892)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.move(UnixFileSystemProvider.java:309)
+	at com.intellij.platform.core.nio.fs.DelegatingFileSystemProvider.move(DelegatingFileSystemProvider.java:211)
+	at java.base/java.nio.file.Files.move(Files.java:1431)
+	at com.intellij.vcs.log.util.StorageId.cleanupAllStorageFiles(PersistentUtil.kt:58)
+	at com.intellij.vcs.log.data.VcsLogStorageImpl.lambda$createStorageAndIndexBackend$4(VcsLogStorageImpl.java:375)
+	at com.intellij.util.io.IOUtil.openCleanOrResetBroken(IOUtil.java:310)
+	at com.intellij.vcs.log.data.VcsLogStorageImpl.createStorageAndIndexBackend(VcsLogStorageImpl.java:358)
+	at com.intellij.vcs.log.data.VcsLogData.createStorageAndIndex(VcsLogData.java:149)
+	at com.intellij.vcs.log.data.VcsLogData.<init>(VcsLogData.java:92)
+	at com.intellij.vcs.log.impl.VcsLogManager.<init>(VcsLogManager.kt:62)
+	at com.intellij.vcs.log.impl.IdeVcsLogManager.<init>(IdeVcsLogManager.kt:33)
+	at com.intellij.vcs.log.impl.IdeVcsProjectLog.createLogManager(IdeVcsProjectLog.kt:48)
+	at com.intellij.vcs.log.impl.VcsProjectLogBase.getOrCreateLogManager(VcsProjectLogBase.kt:221)
+	at com.intellij.vcs.log.impl.VcsProjectLogBase.access$getOrCreateLogManager(VcsProjectLogBase.kt:52)
+	at com.intellij.vcs.log.impl.VcsProjectLogBase$getOrCreateLogManager$2.invokeSuspend(VcsProjectLogBase.kt:209)
+	at com.intellij.vcs.log.impl.VcsProjectLogBase$getOrCreateLogManager$2.invoke(VcsProjectLogBase.kt)
+	at com.intellij.vcs.log.impl.VcsProjectLogBase$getOrCreateLogManager$2.invoke(VcsProjectLogBase.kt)
+	at com.intellij.platform.backend.observation.PlatformActivityTrackerService$trackConfigurationActivity$2$1.invokeSuspend(PlatformActivityTrackerService.kt:72)
+	at com.intellij.platform.backend.observation.PlatformActivityTrackerService$trackConfigurationActivity$2$1.invoke(PlatformActivityTrackerService.kt)
+	at com.intellij.platform.backend.observation.PlatformActivityTrackerService$trackConfigurationActivity$2$1.invoke(PlatformActivityTrackerService.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:44)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:166)
+	at kotlinx.coroutines.BuildersKt.withContext(Unknown Source)
+	at com.intellij.platform.backend.observation.PlatformActivityTrackerService.trackConfigurationActivity(PlatformActivityTrackerService.kt:71)
+	at com.intellij.platform.backend.observation.TrackingUtil.trackActivity(util.kt:23)
+	at com.intellij.vcs.log.impl.VcsProjectLogBase.getOrCreateLogManager(VcsProjectLogBase.kt:208)
+	at com.intellij.vcs.log.impl.VcsProjectLogBase.reinitUnsafe(VcsProjectLogBase.kt:188)
+	at com.intellij.vcs.log.impl.VcsProjectLogBase.access$reinitUnsafe(VcsProjectLogBase.kt:52)
+	at com.intellij.vcs.log.impl.VcsProjectLogBase$reinitAsync$1.invokeSuspend(VcsProjectLogBase.kt:182)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:613)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:1189)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:778)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:765)
+2025-12-15 08:43:43,152 [  16581]   WARN - #c.i.o.a.i.ActionUpdater - 4061 ms total to grab EDT 5 times to expand ToolWindowHeader$2#expandGroup@ToolwindowTitle (com.intellij.toolWindow.ToolWindowHeader$2). Use `ActionUpdateThread.BGT`.
+2025-12-15 08:43:45,630 [  19059]   WARN - #c.i.p.j.n.WebTypesNpmLoader - Failed to fetch packages for '@web-types' (Full Text): Request failed with status code 429
+2025-12-15 08:45:13,831 [ 107260]   WARN - #c.i.o.f.i.EditorCompositeModelManager - Cannot use saved provider list (savedProviders={split-provider[text-editor;markdown-preview-editor]=[Element: <state/>]}, resolvedProvider=[])
+2025-12-15 08:45:16,548 [ 109977]   WARN - #org.intellij.plugins.markdown.ui.preview.jcef.impl.JcefBrowserPipeImpl - No subscribers for documentReady!
+Attached data: 
+2025-12-15 08:45:17,544 [ 110973]   WARN - #c.i.p.j.n.WebTypesNpmLoader - Failed to fetch packages for '@web-types' (Full Text): Request failed with status code 429
+2025-12-15 08:45:19,009 [ 112438]   WARN - #c.i.p.i.c.i.i.IdIndex - class com.intellij.lang.javascript.index.JSIdIndexer for [/home/alma/0inng-soft2/final_ISA/kanban-mobile/www/chunk-OGRGUGCB.js] returned non-IdEntryToScopeMapImpl map (class java.util.Collections$EmptyMap).This is not incorrect, but ineffective -- it is strongly recommended to use com.intellij.psi.impl.cache.impl.id.IdDataConsumer helper class to collect IDs and occurrence masks (instead of plain Map impl) in your IdIndexer implementation 
+2025-12-15 08:45:19,270 [ 112699]   WARN - #c.i.p.j.n.WebTypesNpmLoader - Failed to fetch packages for '@web-types' (Full Text): Request failed with status code 429
+2025-12-15 08:45:19,842 [ 113271]   WARN - #c.i.u.i.c.IndexUpdateRunner - Invalid (alien?) file: #852061
+2025-12-15 08:45:19,847 [ 113276]   WARN - #c.i.u.i.c.IndexUpdateRunner - Invalid (alien?) file: #851990
+2025-12-15 08:45:19,847 [ 113276]   WARN - #c.i.u.i.c.IndexUpdateRunner - Invalid (alien?) file: #851956
+2025-12-15 08:45:19,847 [ 113276]   WARN - #c.i.u.i.c.IndexUpdateRunner - Invalid (alien?) file: #852017
+2025-12-15 08:45:19,847 [ 113276]   WARN - #c.i.u.i.c.IndexUpdateRunner - Invalid (alien?) file: #851984
+2025-12-15 08:45:19,847 [ 113276]   WARN - #c.i.u.i.c.IndexUpdateRunner - Invalid (alien?) file: #851953
+2025-12-15 08:45:19,847 [ 113276]   WARN - #c.i.u.i.c.IndexUpdateRunner - Invalid (alien?) file: #852065
+2025-12-15 08:45:19,848 [ 113277]   WARN - #c.i.u.i.c.IndexUpdateRunner - Invalid (alien?) file: #852055
+2025-12-15 08:45:19,848 [ 113277]   WARN - #c.i.u.i.c.IndexUpdateRunner - Invalid (alien?) file: #852006
+2025-12-15 08:45:19,848 [ 113277]   WARN - #c.i.u.i.c.IndexUpdateRunner - Invalid (alien?) file: #852059
+2025-12-15 08:45:19,848 [ 113277]   WARN - #c.i.u.i.c.IndexUpdateRunner - Invalid (alien?) file: #851974
+2025-12-15 08:45:19,848 [ 113277]   WARN - #c.i.u.i.c.IndexUpdateRunner - Invalid (alien?) file: #851991
+2025-12-15 08:45:19,848 [ 113277]   WARN - #c.i.u.i.c.IndexUpdateRunner - Invalid (alien?) file: #852068
+2025-12-15 08:45:19,848 [ 113277]   WARN - #c.i.u.i.c.IndexUpdateRunner - Invalid (alien?) file: #852036
+2025-12-15 08:45:19,848 [ 113277]   WARN - #c.i.u.i.c.IndexUpdateRunner - Invalid (alien?) file: #852053
+2025-12-15 08:45:19,848 [ 113277]   WARN - #c.i.u.i.c.IndexUpdateRunner - Invalid (alien?) file: #852082
+2025-12-15 08:45:19,848 [ 113277]   WARN - #c.i.u.i.c.IndexUpdateRunner - Invalid (alien?) file: #852077
+2025-12-15 08:45:19,848 [ 113277]   WARN - #c.i.u.i.c.IndexUpdateRunner - Invalid (alien?) file: #852015
+2025-12-15 08:45:19,849 [ 113278]   WARN - #c.i.u.i.c.IndexUpdateRunner - Invalid (alien?) file: #852047
+2025-12-15 08:45:19,849 [ 113278]   WARN - #c.i.u.i.c.IndexUpdateRunner - Invalid (alien?) file: #851977
+2025-12-15 08:45:19,849 [ 113278]   WARN - #c.i.u.i.c.IndexUpdateRunner - Invalid (alien?) file: #851985
+2025-12-15 08:45:19,849 [ 113278]   WARN - #c.i.u.i.c.IndexUpdateRunner - Invalid (alien?) file: #851993
+2025-12-15 08:45:19,849 [ 113278]   WARN - #c.i.u.i.c.IndexUpdateRunner - Invalid (alien?) file: #851995
+2025-12-15 08:45:19,849 [ 113278]   WARN - #c.i.u.i.c.IndexUpdateRunner - Invalid (alien?) file: #852040
+2025-12-15 08:45:19,849 [ 113278]   WARN - #c.i.u.i.c.IndexUpdateRunner - Invalid (alien?) file: #852049
+2025-12-15 08:45:19,849 [ 113278]   WARN - #c.i.u.i.c.IndexUpdateRunner - Invalid (alien?) file: #852010
+2025-12-15 08:45:19,856 [ 113285]   WARN - #c.i.u.i.c.IndexUpdateRunner - Invalid (alien?) file: #852081
+2025-12-15 08:45:19,856 [ 113285]   WARN - #c.i.u.i.c.IndexUpdateRunner - Invalid (alien?) file: #852060
+2025-12-15 08:45:19,856 [ 113285]   WARN - #c.i.u.i.c.IndexUpdateRunner - Invalid (alien?) file: #852013
+2025-12-15 08:45:19,856 [ 113285]   WARN - #c.i.u.i.c.IndexUpdateRunner - Invalid (alien?) file: #852058
+2025-12-15 08:45:19,856 [ 113285]   WARN - #c.i.u.i.c.IndexUpdateRunner - Invalid (alien?) file: #851961
+2025-12-15 08:45:19,857 [ 113286]   WARN - #c.i.u.i.c.IndexUpdateRunner - Invalid (alien?) file: #852057
+2025-12-15 08:45:19,857 [ 113286]   WARN - #c.i.u.i.c.IndexUpdateRunner - Invalid (alien?) file: #851987
+2025-12-15 08:45:20,939 [ 114368]   WARN - #c.i.j.n.l.n.NodeModulesDirectoryManager - Cannot find library by name final_ISA/node_modules, /home/alma/0inng-soft2/final_ISA/node_modules
+2025-12-15 08:45:20,939 [ 114368]   WARN - #c.i.j.n.l.n.NodeModulesDirectoryManager - Cannot find library by name final_ISA/kanban-mobile/node_modules, /home/alma/0inng-soft2/final_ISA/kanban-mobile/node_modules
+2025-12-15 08:45:21,494 [ 114923]   WARN - #o.j.i.maven - updateAllMavenProjects started: incremental=true, MavenProjectsManagerEx.addManagedFilesWithProfilesAndUpdate final_ISA
+2025-12-15 08:45:21,746 [ 115175]   WARN - #c.i.p.j.n.WebTypesNpmLoader - Failed to fetch packages for '@web-types' (Full Text): Request failed with status code 429
+2025-12-15 08:45:25,852 [ 119281]   WARN - #c.i.e.r.RemoteProcessSupport - Remote process stderr:WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+
+2025-12-15 08:45:25,852 [ 119281]   WARN - #c.i.e.r.RemoteProcessSupport - WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+2025-12-15 08:45:25,852 [ 119281]   WARN - #c.i.e.r.RemoteProcessSupport - Remote process stderr:WARNING: sun.misc.Unsafe::objectFieldOffset has been called by com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper (file:/opt/idea-IU-252.26830.84/plugins/maven/lib/maven3/lib/guava-33.2.1-jre.jar)
+
+2025-12-15 08:45:25,852 [ 119281]   WARN - #c.i.e.r.RemoteProcessSupport - WARNING: sun.misc.Unsafe::objectFieldOffset has been called by com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper (file:/opt/idea-IU-252.26830.84/plugins/maven/lib/maven3/lib/guava-33.2.1-jre.jar)
+2025-12-15 08:45:25,852 [ 119281]   WARN - #c.i.e.r.RemoteProcessSupport - Remote process stderr:WARNING: Please consider reporting this to the maintainers of class com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper
+
+2025-12-15 08:45:25,852 [ 119281]   WARN - #c.i.e.r.RemoteProcessSupport - WARNING: Please consider reporting this to the maintainers of class com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper
+2025-12-15 08:45:25,852 [ 119281]   WARN - #c.i.e.r.RemoteProcessSupport - Remote process stderr:WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+
+2025-12-15 08:45:25,853 [ 119282]   WARN - #c.i.e.r.RemoteProcessSupport - WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+2025-12-15 08:45:30,557 [ 123986]   WARN - #c.i.p.j.n.WebTypesNpmLoader - Failed to fetch packages for '@web-types' (Full Text): Request failed with status code 429
+2025-12-15 08:45:36,719 [ 130148]   WARN - #o.j.i.maven - updateAllMavenProjects finished: incremental=true, MavenProjectsManagerEx.addManagedFilesWithProfilesAndUpdate final_ISA
+2025-12-15 08:49:13,305 [ 346734]   WARN - #o.j.i.maven - updateMavenProjects started: incremental=true, MavenProjectAware.reloadProject, sync selected 1 0 final_ISA
+2025-12-15 08:49:15,758 [ 349187]   WARN - #o.j.i.maven - updateMavenProjects finished: incremental=true, MavenProjectAware.reloadProject, sync selected 1 0 final_ISA
+2025-12-15 08:53:07,648 [ 581077]   WARN - #o.j.i.maven - updateMavenProjects started: incremental=true, MavenProjectAware.reloadProject, sync selected 1 0 final_ISA
+2025-12-15 08:53:08,761 [ 582190]   WARN - #o.j.i.maven - updateMavenProjects finished: incremental=true, MavenProjectAware.reloadProject, sync selected 1 0 final_ISA
