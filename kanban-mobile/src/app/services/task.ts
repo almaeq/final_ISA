@@ -25,26 +25,27 @@ export class TaskService {
   ];
 
   constructor(private http: HttpClient) { }
-
-  getTasks(): Observable<Task[]> {
-    return this.http.get<Task[]>(this.apiUrl).pipe(
-      tap(tasks => {
-        // 1. Si hay conexion, guardamos los datos reales en LocalStorage
-        console.log('Conexión exitosa, guardando datos...');
-        localStorage.setItem('offline_tasks', JSON.stringify(tasks));
-      }),
-      catchError(error => {
-        // 2. Si NO hay conexion, cargamos lo guardado o los datos falsos
-        console.log('Sin conexión. Cargando datos offline...');
-        const stored = localStorage.getItem('offline_tasks');
-        if (stored) {
-          return of(JSON.parse(stored));
-        }
-        // 3. Si no hay nada guardado, devolvemos los datos dummy para mostrar que la UI funciona
-        return of(this.dummyTasks);
-      })
-    );
-  }
+getTasks(): Observable<Task[]> {
+  // Simplemente hacemos la petición.
+  // Si el Service Worker funciona, él interceptará esto cuando estés offline
+  // y devolverá los datos guardados en SU propia base de datos (Cache Storage/IndexedDB).
+  return this.http.get<Task[]>(this.apiUrl); 
+  
+  /* COMENTA TODO ESTO TEMPORALMENTE:
+  .pipe(
+    tap(tasks => {
+      localStorage.setItem('offline_tasks', JSON.stringify(tasks));
+    }),
+    catchError(error => {
+      const stored = localStorage.getItem('offline_tasks');
+      if (stored) {
+        return of(JSON.parse(stored));
+      }
+      return of(this.dummyTasks);
+    })
+  );
+  */
+}
   getAppConfig() {
   // Estrategia Performance: Debería cargar instantáneo la segunda vez, incluso sin red
   return this.http.get('http://localhost:23456/api/mobile/config');

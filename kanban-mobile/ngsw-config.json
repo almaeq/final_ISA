@@ -29,7 +29,7 @@
     {
       "name": "kanban-freshness-tasks",
       "urls": [
-        "/api/mobile/tasks"
+        "http://localhost:23456/api/mobile/tasks"
       ],
       "cacheConfig": {
         "strategy": "freshness",
@@ -41,7 +41,7 @@
     {
       "name": "kanban-performance-config",
       "urls": [
-        "/api/mobile/config"
+        "http://localhost:23456/api/mobile/config"
       ],
       "cacheConfig": {
         "strategy": "performance",

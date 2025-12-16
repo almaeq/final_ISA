@@ -15,7 +15,7 @@ bootstrapApplication(AppComponent, {
     provideHttpClient(),
     provideRouter(routes, withPreloading(PreloadAllModules)),
     provideServiceWorker('ngsw-worker.js', {
-      enabled: !isDevMode(),
+      enabled: true,
       registrationStrategy: 'registerWhenStable:30000',
     }),
   ],
