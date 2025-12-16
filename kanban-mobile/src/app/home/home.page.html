@@ -1,34 +1,58 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
-    <ion-title>
-      Kanban PWA
-    </ion-title>
+    <ion-title>Kanban PWA</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
 
-  <ion-refresher slot="fixed" (ionRefresh)="loadTasks($event)">
+  <ion-refresher slot="fixed" (ionRefresh)="loadAllData($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 
-  <!-- 👇 SOLO ESTO va dentro del contenedor -->
   <div class="kanban-container">
 
-    <ion-text color="medium">
-      <p style="text-align: center; font-size: 0.9em;">
-        <i>Desliza hacia abajo para intentar reconectar.</i>
-      </p>
+    <ion-card color="light">
+      <ion-card-header>
+        <ion-card-subtitle>Req: Sin Caché / Users</ion-card-subtitle>
+        <ion-card-title>Estado Servidor</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div *ngIf="serverStatus && !serverStatus.error">
+          <p>🟢 <b>Online</b></p>
+          <p>Hora Servidor: {{ serverStatus.serverTime | date:'mediumTime' }}</p>
+          <p><small>(Esto cambia siempre que recargas)</small></p>
+        </div>
+        <div *ngIf="!serverStatus">
+          Cargando...
+        </div>
+        <div *ngIf="serverStatus?.error">
+          🔴 <b>Offline</b> (No caché disponible)
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="secondary">
+      <ion-card-header>
+        <ion-card-subtitle>Req: Performance / Contacts</ion-card-subtitle>
+        <ion-card-title>Config App</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Versión: <b>{{ appConfig?.version }}</b></p>
+        <p>Tema: <b>{{ appConfig?.theme }}</b></p>
+        <p><small>(Carga instantánea aunque estés offline)</small></p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-text color="medium" style="text-align: center;">
+      <h3>Req: Freshness (Tareas)</h3>
     </ion-text>
 
     <ion-list>
       <ion-card *ngFor="let task of tasks">
         <ion-card-header>
           <ion-card-subtitle>
-            <ion-badge
-              [color]="task.status === 'DONE'
-                ? 'success'
-                : (task.status === 'DOING' ? 'warning' : 'medium')">
+            <ion-badge [color]="task.status === 'DONE' ? 'success' : (task.status === 'DOING' ? 'warning' : 'medium')">
               {{ task.status }}
             </ion-badge>
           </ion-card-subtitle>
@@ -41,6 +65,5 @@
     </ion-list>
 
   </div>
-  <!-- 👆 FIN contenedor -->
 
 </ion-content>

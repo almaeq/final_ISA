@@ -29,12 +29,12 @@ export class TaskService {
   getTasks(): Observable<Task[]> {
     return this.http.get<Task[]>(this.apiUrl).pipe(
       tap(tasks => {
-        // 1. Si hay conexión, guardamos los datos reales en LocalStorage
+        // 1. Si hay conexion, guardamos los datos reales en LocalStorage
         console.log('Conexión exitosa, guardando datos...');
         localStorage.setItem('offline_tasks', JSON.stringify(tasks));
       }),
       catchError(error => {
-        // 2. Si NO hay conexión, cargamos lo guardado o los datos falsos
+        // 2. Si NO hay conexion, cargamos lo guardado o los datos falsos
         console.log('Sin conexión. Cargando datos offline...');
         const stored = localStorage.getItem('offline_tasks');
         if (stored) {
@@ -45,4 +45,13 @@ export class TaskService {
       })
     );
   }
+  getAppConfig() {
+  // Estrategia Performance: Debería cargar instantáneo la segunda vez, incluso sin red
+  return this.http.get('http://localhost:23456/api/mobile/config');
+}
+
+getServerStatus() {
+  // Estrategia Sin Caché: Siempre debería fallar si no hay red
+  return this.http.get('http://localhost:23456/api/mobile/status');
+}
 }

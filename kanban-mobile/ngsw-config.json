@@ -27,10 +27,8 @@
   ],
   "dataGroups": [
     {
-      "name": "kanban-api",
+      "name": "kanban-freshness-tasks",
       "urls": [
-        "http://localhost:23456/api/mobile/tasks",
-        "http://127.0.0.1:23456/api/mobile/tasks",
         "/api/mobile/tasks"
       ],
       "cacheConfig": {
@@ -38,6 +36,17 @@
         "maxSize": 50,
         "maxAge": "1d",
         "timeout": "5s"
+      }
+    },
+    {
+      "name": "kanban-performance-config",
+      "urls": [
+        "/api/mobile/config"
+      ],
+      "cacheConfig": {
+        "strategy": "performance",
+        "maxSize": 10,
+        "maxAge": "7d"
       }
     }
   ]

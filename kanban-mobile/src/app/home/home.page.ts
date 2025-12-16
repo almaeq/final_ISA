@@ -16,6 +16,8 @@ import {
   IonCardSubtitle,
   IonCardContent,
   IonBadge,
+  IonButton, // <--- Agrega este si quieres botones de prueba
+  IonIcon
 } from '@ionic/angular/standalone';
 
 import { Task, TaskService } from '../services/task';
@@ -42,11 +44,14 @@ import { Task, TaskService } from '../services/task';
     IonCardSubtitle,
     IonCardContent,
     IonBadge,
+    IonButton
   ],
 })
 export class HomePage implements OnInit {
   tasks: Task[] = [];
   isOffline: boolean = false;
+  appConfig: any = null;      // Para Performance 
+  serverStatus: any = null;   // Para Sin Caché 
 
   constructor(private taskService: TaskService) {}
 
@@ -54,16 +59,44 @@ export class HomePage implements OnInit {
     this.loadTasks();
   }
 
-  loadTasks(event?: any) {
+  loadAllData(event?: any) {
+    this.loadTasks();
+    this.loadConfig(); // Performance
+    this.loadStatus(); // Sin Cache
+    if (event) {
+      setTimeout(() => event.target.complete(), 1000);
+    }
+  }
+
+  loadTasks() {
     this.taskService.getTasks().subscribe({
+      next: (data) => this.tasks = data,
+      error: (err) => console.log('Error tasks', err)
+    });
+  }
+
+  // 2. PERFORMANCE (Simulando Contacts)
+  loadConfig() {
+    this.taskService.getAppConfig().subscribe({
       next: (data) => {
-        this.tasks = data;
-        if (event) event.target.complete();
+        console.log('Config cargada (Performance)');
+        this.appConfig = data;
+      }
+    });
+  }
+
+  // 3. SIN CACHE (Simulando Users)
+  loadStatus() {
+    this.serverStatus = null; // Limpiamos para ver el efecto de carga
+    this.taskService.getServerStatus().subscribe({
+      next: (data) => {
+        console.log('Status fresco de red');
+        this.serverStatus = data;
       },
       error: (err) => {
-        console.log('Error o modo offline', err);
-        if (event) event.target.complete();
-      },
+        console.log('Error de red (Status no disponible offline)');
+        this.serverStatus = { error: 'Offline' };
+      }
     });
   }
 }

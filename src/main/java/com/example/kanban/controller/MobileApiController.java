@@ -4,6 +4,8 @@ import com.example.kanban.model.Task;
 import com.example.kanban.model.TaskStatus;
 import com.example.kanban.service.TaskService;
 import org.springframework.web.bind.annotation.*;
+import java.util.Map;
+import java.util.HashMap;
 
 import java.util.List;
 
@@ -37,5 +39,26 @@ public class MobileApiController {
     @DeleteMapping("/tasks/{id}")
     public void deleteTask(@PathVariable Long id) {
         taskService.deleteTask(id);
+    }
+
+    // 2. ESTRATEGIA PERFORMANCE (Simulando "Contacts" o Configuracion)
+    // Datos que casi nunca cambian. Cacheamos por 7 dias.
+    @GetMapping("/config")
+    public Map<String, String> getAppConfig() {
+        Map<String, String> config = new HashMap<>();
+        config.put("version", "1.0.0");
+        config.put("theme", "dark");
+        config.put("maintenance", "false");
+        return config;
+    }
+
+    // 3. ESTRATEGIA SIN CACHE (Simulando "Users" o Estado del Servidor)
+    // Datos que siempre deben ser reales. Nunca cachear.
+    @GetMapping("/status")
+    public Map<String, Object> getServerStatus() {
+        Map<String, Object> status = new HashMap<>();
+        status.put("online", true);
+        status.put("serverTime", System.currentTimeMillis()); // Cambia cada milisegundo
+        return status;
     }
 }
