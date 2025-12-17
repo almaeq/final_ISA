@@ -18,7 +18,7 @@ public class KanbanController {
 
     @GetMapping("/")
     public String index(Model model) {
-        Map<com.example.kanban.model.TaskStatus, java.util.List<Task>> original = taskService.getTasksGroupedByStatus();
+        Map<TaskStatus, java.util.List<Task>> original = taskService.getTasksGroupedByStatus();
         java.util.Map<String, java.util.List<Task>> stringMap = new java.util.HashMap<>();
         original.forEach((k, v) -> stringMap.put(k.name(), v));
 

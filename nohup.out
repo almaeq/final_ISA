@@ -533,3 +533,70 @@ java.nio.file.NoSuchFileException: /home/alma/.cache/JetBrains/IntelliJIdea2025.
 2025-12-16 09:46:42,611 [  32311]   WARN - #c.i.j.n.l.n.NodeModulesDirectoryManager - Cannot find library by name final_ISA/node_modules, /home/alma/0inng-soft2/final_ISA/node_modules
 2025-12-16 09:46:42,611 [  32311]   WARN - #c.i.j.n.l.n.NodeModulesDirectoryManager - Cannot find library by name final_ISA/kanban-mobile/node_modules, /home/alma/0inng-soft2/final_ISA/kanban-mobile/node_modules
 2025-12-16 09:46:43,107 [  32807]   WARN - #c.i.p.j.n.WebTypesNpmLoader - Failed to fetch packages for '@web-types' (Full Text): Request failed with status code 429
+2025-12-16 23:34:25,013 [49694713]   WARN - #c.i.o.f.i.EditorCompositeModelManager - Cannot use saved provider list (savedProviders={split-provider[text-editor;markdown-preview-editor]=[Element: <state/>]}, resolvedProvider=[])
+2025-12-16 23:34:29,068 [49698768]   WARN - #c.i.p.j.n.WebTypesNpmLoader - Failed to fetch packages for '@web-types' (Full Text): Request failed with status code 429
+2025-12-16 23:34:31,160 [49700860]   WARN - #org.intellij.plugins.markdown.ui.preview.jcef.impl.JcefBrowserPipeImpl - No subscribers for documentReady!
+Attached data: 
+2025-12-16 23:34:31,638 [49701338]   WARN - #o.j.i.maven - updateAllMavenProjects started: incremental=true, MavenProjectsManagerEx.addManagedFilesWithProfilesAndUpdate final_ISA
+2025-12-16 23:34:31,883 [49701583]   WARN - #c.i.p.j.n.WebTypesNpmLoader - Failed to fetch packages for '@web-types' (Full Text): Request failed with status code 429
+2025-12-16 23:34:35,686 [49705386]   WARN - #c.i.p.i.c.i.i.IdIndex - class com.intellij.lang.javascript.index.JSIdIndexer for [/home/alma/0inng-soft2/final_ISA/node_modules/playwright/lib/common/expectBundleImpl.js] returned non-IdEntryToScopeMapImpl map (class java.util.Collections$EmptyMap).This is not incorrect, but ineffective -- it is strongly recommended to use com.intellij.psi.impl.cache.impl.id.IdDataConsumer helper class to collect IDs and occurrence masks (instead of plain Map impl) in your IdIndexer implementation 
+2025-12-16 23:34:39,634 [49709334]   WARN - #c.i.e.r.RemoteProcessSupport - Remote process stderr:WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+
+2025-12-16 23:34:39,635 [49709335]   WARN - #c.i.e.r.RemoteProcessSupport - WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+2025-12-16 23:34:39,635 [49709335]   WARN - #c.i.e.r.RemoteProcessSupport - Remote process stderr:WARNING: sun.misc.Unsafe::objectFieldOffset has been called by com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper (file:/opt/idea-IU-252.26830.84/plugins/maven/lib/maven3/lib/guava-33.2.1-jre.jar)
+
+2025-12-16 23:34:39,635 [49709335]   WARN - #c.i.e.r.RemoteProcessSupport - WARNING: sun.misc.Unsafe::objectFieldOffset has been called by com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper (file:/opt/idea-IU-252.26830.84/plugins/maven/lib/maven3/lib/guava-33.2.1-jre.jar)
+2025-12-16 23:34:39,635 [49709335]   WARN - #c.i.e.r.RemoteProcessSupport - Remote process stderr:WARNING: Please consider reporting this to the maintainers of class com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper
+
+2025-12-16 23:34:39,635 [49709335]   WARN - #c.i.e.r.RemoteProcessSupport - WARNING: Please consider reporting this to the maintainers of class com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper
+2025-12-16 23:34:39,637 [49709337]   WARN - #c.i.e.r.RemoteProcessSupport - Remote process stderr:WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+
+2025-12-16 23:34:39,637 [49709337]   WARN - #c.i.e.r.RemoteProcessSupport - WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+2025-12-16 23:34:52,703 [49722403]   WARN - #o.j.i.maven - updateAllMavenProjects finished: incremental=true, MavenProjectsManagerEx.addManagedFilesWithProfilesAndUpdate final_ISA
+2025-12-16 23:35:03,303 [49733003]   WARN - #c.i.p.j.n.WebTypesNpmLoader - Failed to fetch packages for '@web-types' (Full Text): Request failed with status code 429
+2025-12-16 23:37:46,843 [49896543]   WARN - #c.i.p.j.n.WebTypesNpmLoader - Failed to fetch packages for '@web-types' (Full Text): Request failed with status code 429
+2025-12-16 23:37:49,959 [49899659]   WARN - #c.i.o.v.ExternallyAddedFilesProcessorImpl - Cannot find project config directory for non-default and non-directory based project src
+2025-12-16 23:38:17,970 [49927670]   WARN - #c.i.o.p.u.AbstractProgressIndicatorBase - Suppressed a frequent exception logged for the 2nd time: null
+2025-12-16 23:38:17,986 [49927686]   WARN - #c.i.o.v.ExternallyAddedFilesProcessorImpl - Cannot find project config directory for non-default and non-directory based project src
+2025-12-16 23:38:18,281 [49927981]   WARN - #c.i.o.v.ExternallyAddedFilesProcessorImpl - Cannot find project config directory for non-default and non-directory based project src
+2025-12-16 23:38:40,117 [49949817]   WARN - #c.i.o.v.ExternallyAddedFilesProcessorImpl - Cannot find project config directory for non-default and non-directory based project src
+2025-12-16 23:38:51,058 [49960758]   WARN - #c.i.o.v.ExternallyAddedFilesProcessorImpl - Cannot find project config directory for non-default and non-directory based project src
+2025-12-16 23:38:51,062 [49960762]   WARN - #c.i.o.v.ExternallyAddedFilesProcessorImpl - Cannot find project config directory for non-default and non-directory based project src
+2025-12-16 23:39:02,375 [49972075]   WARN - #c.i.o.v.ExternallyAddedFilesProcessorImpl - Cannot find project config directory for non-default and non-directory based project src
+2025-12-16 23:39:02,648 [49972348]   WARN - #c.i.o.v.ExternallyAddedFilesProcessorImpl - Cannot find project config directory for non-default and non-directory based project src
+2025-12-16 23:39:19,822 [49989522]   WARN - #c.i.o.v.ExternallyAddedFilesProcessorImpl - Cannot find project config directory for non-default and non-directory based project src
+2025-12-16 23:39:20,113 [49989813]   WARN - #c.i.o.v.ExternallyAddedFilesProcessorImpl - Cannot find project config directory for non-default and non-directory based project src
+2025-12-16 23:39:32,077 [50001777]   WARN - #c.i.o.v.ExternallyAddedFilesProcessorImpl - Cannot find project config directory for non-default and non-directory based project src
+2025-12-16 23:39:33,072 [50002772]   WARN - #c.i.o.v.ExternallyAddedFilesProcessorImpl - Cannot find project config directory for non-default and non-directory based project src
+2025-12-16 23:39:33,699 [50003399]   WARN - #c.i.v.g.s.r.GitRepositoriesHolder - State of repository RepositoryId(projectId=ProjectId(id=cpn7rpkl72n62h7osiha), rootPath=/home/alma/0inng-soft2/final_ISA) is not synchronized. Known repositories are: 
+2025-12-16 23:39:37,222 [50006922]   WARN - #c.i.p.j.n.WebTypesNpmLoader - Failed to fetch packages for '@web-types' (Full Text): Request failed with status code 429
+2025-12-16 23:40:09,216 [50038916]   WARN - org.apache.velocity.deprecation - configuration key 'resource.loader' has been deprecated in favor of 'resource.loaders'
+2025-12-16 23:40:09,217 [50038917]   WARN - org.apache.velocity.deprecation - configuration key 'includes.resource.loader.instance' has been deprecated in favor of 'resource.loader.includes.instance'
+2025-12-16 23:41:45,160 [50134860]   WARN - #o.j.k.i.s.r.KotlinCompilerReferenceIndexStorage - kotlin-data-container is not found
+2025-12-16 23:44:23,981 [50293681]   WARN - #o.j.k.i.s.r.KotlinCompilerReferenceIndexStorage - kotlin-data-container is not found
+2025-12-16 23:44:34,267 [50303967]   WARN - #c.i.u.i.p.ProjectIndexableFilesFilterHealthCheck - Following files are indexable but they were NOT found in filter. Errors count: 7. Examples:
+file id=852351 path=/home/alma/0inng-soft2/final_ISA/.idea/inspectionProfiles
+file id=852360 path=/home/alma/0inng-soft2/final_ISA/src/.idea
+file id=852361 path=/home/alma/0inng-soft2/final_ISA/src/.idea/modules.xml
+file id=852362 path=/home/alma/0inng-soft2/final_ISA/src/final_ISA.iml
+file id=852363 path=/home/alma/0inng-soft2/final_ISA/src/.idea/workspace.xml
+...
+2025-12-16 23:49:25,893 [50595593]   WARN - #c.i.o.p.i.UnknownMissingSdkFix - SDK with name openjdk-24 already exists: clash=SdkEntity-:-1, new=openjdk-24 (2) Version:java version "24.0.1" Path:(/home/alma/.jdks/openjdk-24.0.1)
+2025-12-16 23:49:25,953 [50595653]   WARN - #c.i.o.p.i.UnknownMissingSdkFix - SDK with name openjdk-24 already exists: clash=SdkEntity-:-1, new=openjdk-24 (2) Version:java version "24.0.1" Path:(/home/alma/.jdks/openjdk-24.0.1)
+2025-12-16 23:49:26,431 [50596131]   WARN - #c.i.o.v.n.p.PersistentFSImpl - file[463, flags: 4]: top parent (id: 461, name: 'util-8.jar', flags: 774 parent: 0), is still not in the idToDirCache. path: [462, 461] [/util-8.jar/kotlin], cachedRoots.size(=576), roots.size(=576), pfs.roots.contains(461)=false, fs.roots.contains(461)=true, non-cached roots: 0, cached non-roots: 0, FS roots not PFS roots: 303: 
+
+2025-12-16 23:49:26,431 [50596131]   WARN - #c.i.o.v.n.p.PersistentFSImpl - file[463, flags: 4]: top parent (id: 461, name: 'util-8.jar', flags: 774 parent: 0), is still not in the idToDirCache. path: [462, 461] [/util-8.jar/kotlin], cachedRoots.size(=576), roots.size(=576), pfs.roots.contains(461)=false, fs.roots.contains(461)=true, non-cached roots: 0, cached non-roots: 0, FS roots not PFS roots: 303: 
+
+2025-12-16 23:49:57,024 [50626724]   WARN - #o.j.k.i.s.r.KotlinCompilerReferenceIndexStorage - kotlin-data-container is not found
+2025-12-16 23:50:03,321 [50633021]   WARN - #c.i.p.i.c.i.i.IdIndex - class com.intellij.lang.javascript.index.JSIdIndexer for [/home/alma/.gradle/jdks/eclipse_adoptium-21-amd64-linux.2!/jdk.javadoc/jdk/javadoc/internal/doclets/formats/html/resources/script-dir/jquery-ui.min.js] returned non-IdEntryToScopeMapImpl map (class java.util.Collections$EmptyMap).This is not incorrect, but ineffective -- it is strongly recommended to use com.intellij.psi.impl.cache.impl.id.IdDataConsumer helper class to collect IDs and occurrence masks (instead of plain Map impl) in your IdIndexer implementation 
+2025-12-16 23:53:22,006 [50831706]   WARN - #o.j.k.i.s.r.KotlinCompilerReferenceIndexStorage - kotlin-data-container is not found
+2025-12-16 23:53:22,089 [50831789]   WARN - #c.i.p.u.w.JavaConsoleWithProfilerWidget - Cannot attach to process Process[pid=657808, exitValue="not exited"] (pid 657808): VM is unsupported or the application finished fast
+2025-12-16 23:56:45,826 [51035526]   WARN - #o.j.k.i.s.r.KotlinCompilerReferenceIndexStorage - kotlin-data-container is not found
+2025-12-16 23:56:45,904 [51035604]   WARN - #c.i.p.u.w.JavaConsoleWithProfilerWidget - Cannot attach to process Process[pid=659430, exitValue="not exited"] (pid 659430): VM is unsupported or the application finished fast
+2025-12-16 23:57:05,653 [51055353]   WARN - #o.j.k.i.s.r.KotlinCompilerReferenceIndexStorage - kotlin-data-container is not found
+2025-12-16 23:57:05,731 [51055431]   WARN - #c.i.p.u.w.JavaConsoleWithProfilerWidget - Cannot attach to process Process[pid=659679, exitValue="not exited"] (pid 659679): VM is unsupported or the application finished fast
+2025-12-16 23:57:48,586 [51098286]   WARN - #o.j.k.i.s.r.KotlinCompilerReferenceIndexStorage - kotlin-data-container is not found
+2025-12-16 23:57:48,654 [51098354]   WARN - #c.i.p.u.w.JavaConsoleWithProfilerWidget - Cannot attach to process Process[pid=660119, exitValue="not exited"] (pid 660119): VM is unsupported or the application finished fast
+2025-12-17 00:02:25,353 [51375053]   WARN - #c.i.p.i.c.i.i.IdIndex - class com.intellij.lang.javascript.index.JSIdIndexer for [/home/alma/0inng-soft2/final_ISA/kanban-mobile/www/chunk-36ESZ2IJ.js] returned non-IdEntryToScopeMapImpl map (class java.util.Collections$EmptyMap).This is not incorrect, but ineffective -- it is strongly recommended to use com.intellij.psi.impl.cache.impl.id.IdDataConsumer helper class to collect IDs and occurrence masks (instead of plain Map impl) in your IdIndexer implementation 
+2025-12-17 00:06:51,047 [51640747]   WARN - #o.j.k.i.s.r.KotlinCompilerReferenceIndexStorage - kotlin-data-container is not found
+2025-12-17 00:06:51,129 [51640829]   WARN - #c.i.p.u.w.JavaConsoleWithProfilerWidget - Cannot attach to process Process[pid=669577, exitValue="not exited"] (pid 669577): VM is unsupported or the application finished fast
